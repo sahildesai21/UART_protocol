@@ -36,7 +36,7 @@ module tx(
             end
         else if(sending) 
             if (count_clk < clk_per_bit -1)  begin
-                count_clk <= count_clk + 1;
+                count_clk <= count_clk + 1;                     //holding time till 87 clocks so that the data can reach to the rx efficently 
                 end
             else begin 
                 count_clk <= 0;
