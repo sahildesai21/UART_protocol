@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns/1ps
 
 module tx(
     input clk,              // by default all the input are wire.
@@ -9,7 +9,7 @@ module tx(
     output reg tx_busy                 // tell the whether the system is busy or not.
     );
     
-    parameter clk_per_bit = 87;          // clk_frequency(1MHz) / baud rate(11520) = clk_per_bit
+    parameter clk_per_bit = 868;          // clk_frequency(1MHz) / baud rate(11520) = clk_per_bit
     
     reg [7:0] tx_shift = 0;           // for storing the data for FSM
     reg [15:0] count_clk = 0;         // counts how many clk cycle passed for the current bit 
@@ -31,7 +31,6 @@ module tx(
             tx_busy <= 1;
             sending <= 1;
             tx_shift <= tx_data;
-            count_clk <= 0;
             bit_index <= 0;        
             end
         else if(sending) 
@@ -57,6 +56,5 @@ module tx(
                     end
                     endcase    
                 end
-            end
-   
+            end   
  endmodule

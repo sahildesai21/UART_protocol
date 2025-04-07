@@ -8,7 +8,7 @@ module rx(
     output reg [7:0] rx_data 
     );
     
-    parameter clk_per_bit = 87;
+    parameter clk_per_bit = 868;
     
     reg receiving = 0;
     reg [7:0] rx_shift = 0;
